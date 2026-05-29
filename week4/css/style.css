@@ -1,0 +1,86 @@
+body {
+    background-color: #F5F5F5;
+    color: #303841;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* sidebar styling */
+aside {
+    background-color: #303841;
+    color: #F5F5F5;
+    width: 30%;
+}
+
+.logo p {
+    color: #76ABAE;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 150px;
+    width: 150px;
+}
+
+/* Main area */
+.main {
+    padding: 40px;
+    width: 70%;
+}
+
+/* Form styling */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #303841;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #76ABAE;
+}
+
+/* Button */
+.btn {
+    background-color: #FF5722;
+    color: #F5F5F5;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #e64a19;
+}
+
+/* Error messages */
+.error {
+    color: #FF5722;
+    font-size: 12px;
+    display: block;
+}
+
+.error.active {
+    margin-top: 4px;
+}
