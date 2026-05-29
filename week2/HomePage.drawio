@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ApzbygfxoTda7xtHYiVh">
+    <mxGraphModel dx="852" dy="507" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="610" width="760" x="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="HOME" vertex="1">
+          <mxGeometry height="30" width="120" x="60" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="CONTACT US" vertex="1">
+          <mxGeometry height="30" width="120" x="510" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="LOGIN" vertex="1">
+          <mxGeometry height="30" width="120" x="360" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="SERVICES" vertex="1">
+          <mxGeometry height="30" width="120" x="210" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="BOOKINGS" vertex="1">
+          <mxGeometry height="30" width="120" x="660" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-7" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="320" width="320" x="60" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-9" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="320" width="320" x="460" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="60" width="700" x="70" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HERO IMAGE HERE" vertex="1">
+          <mxGeometry height="30" width="60" x="175" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-15" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;text-align: center; margin-top: 0px;&quot;&gt;WELCOME TO RUNI EMPIRE&lt;/h1&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="170" width="230" x="490" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="vuJ2XdnEzLbipU1gCy6O-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="FOOTER" vertex="1">
+          <mxGeometry height="30" width="60" x="370" y="545" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
