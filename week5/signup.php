@@ -8,7 +8,7 @@
             <h2>Create Account to Access our Services</h2>
         </div>
 
-        <form action="includes/signup-handler.php" method="POST">
+        <form id="signupForm" action="includes/signup-handler.php" method="POST">
 
             <div class="form-row">
                 <label>Name</label>
@@ -17,7 +17,8 @@
 
             <div class="form-row">
                 <label>Email</label>
-                <input type="email" name="email" required>
+                <input type="email" id="email" name="email" required>
+                <span id="span-email"></span>
             </div>
 
             <div class="form-row">
@@ -27,15 +28,19 @@
 
             <div class="form-row">
                 <label>Password</label>
-                <input type="password" name="password" required>
+                <input type="password" id="password" name="password" required>
+                <span id="span-password"></span>
             </div>
 
             <div class="form-row">
                 <label>Confirm Password</label>
                 <input type="password" name="confirm_password" required>
+                <span id="confirm-password-error"></span>
             </div>
 
-            <div class="center-div"><button type="submit" class="btn-cta">Sign Up</button></div>
+            <div class="center-div">
+                <button type="submit" class="btn-cta">Sign Up</button>
+            </div>
 
         </form>
 

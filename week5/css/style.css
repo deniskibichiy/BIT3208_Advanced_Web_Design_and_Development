@@ -141,15 +141,6 @@ ul li a {
 }
 
 
-
-:root {
-    --bg-light: #F5F5F5;
-    --primary-text: #303841;
-    --accent-teal: #76ABAE;
-    --accent-action: #FF5722;
-    --white: #FFFFFF;
-}
-
 /* full page background */
 body {
     background: var(--white);

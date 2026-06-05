@@ -1,60 +1,89 @@
-const form = document.querySelector("#loginForm");
+// script.js
 
-form.addEventListener("submit", function (event) {
+function showError(form) {
 
-    let valid = showError(); 
+    const name = form.querySelector("input[name='name']");
+    const email = form.querySelector("#email");
+    const phone = form.querySelector("input[name='phone']");
+    const password = form.querySelector("#password");
+    const confirm = form.querySelector("input[name='confirm_password']");
 
-    if (!valid) {
-        event.preventDefault(); 
-    }
-
-});
-
-function showError() {
-    const email = document.querySelector("#email");
-    const password = document.querySelector("#password");
-
-    const emailError = document.querySelector("#span-email");
-    const passwordError = document.querySelector("#span-password");
+    const emailError = form.querySelector("#span-email");
+    const passwordError = form.querySelector("#span-password");
+    const confirm_password_error = form.querySelector("#confirm-password-error")
 
     let isValid = true;
 
-    // Email validation
-    if (!email.validity.valid || email.value.trim() === "") {
-        emailError.textContent = "Enter a valid email address";
-        emailError.classList.add("active");
-        isValid = false;
-    } else {
-        emailError.textContent = "";
-        emailError.classList.remove("active");
+    // 
+    if (name) {
+        if (name.value.trim() === "") {
+            name.style.border = "1px solid red";
+            isValid = false;
+        } else {
+            name.style.border = "1px solid green";
+        }
     }
 
-    // Password validation
-    if (!password.validity.valid || password.value.trim() === "") {
-        passwordError.textContent = "Password cannot be empty";
-        passwordError.classList.add("active");
-        isValid = false;
-    } else {
-        passwordError.textContent = "";
-        passwordError.classList.remove("active");
+    // EMAIL
+    if (email) {
+        if (!email.value.trim() || !email.validity.valid) {
+            if (emailError) emailError.textContent = "Enter a valid email address";
+            email.style.border = "1px solid red";
+            isValid = false;
+        } else {
+            if (emailError) emailError.textContent = "";
+            email.style.border = "1px solid green";
+        }
     }
 
-    // If valid, proceed
-    if (isValid) {
-        console.log("Form is valid. Ready to submit.");
-        
+    // PHONE 
+    if (phone) {
+        if (phone.value.trim().length < 10) {
+            phone.style.border = "1px solid red";
+            isValid = false;
+        } else {
+            phone.style.border = "1px solid green";
+        }
     }
-       return isValid;
+
+    // PASSWORD
+    if (password) {
+        if (password.value.trim().length < 6) {
+            if (passwordError) passwordError.textContent = "Password must be at least 6 characters";
+            password.style.border = "1px solid red";
+            isValid = false;
+        } else {
+            if (passwordError) passwordError.textContent = "";
+            password.style.border = "1px solid green";
+        }
+    }
+
+    // CONFIRM PASSWORD
+    if (confirm && password) {
+        if (confirm.value !== password.value || confirm.value.trim() === "") {
+            confirm.style.border = "1px solid red";
+            confirm_password_error.textContent = "Passwords must match";
+            confirm_password_error.style.color = "red";
+            isValid = false;
+        } else {
+            confirm.style.border = "1px solid green";
+        }
+    }
+
+    return isValid;
 }
 
-/* DOM Manipulation*/
 
-function toggleSection() {
-    let msg = document.getElementById("message");
+// SUBMIT HANDLER
+const form = document.querySelector("#loginForm, #signupForm");
 
-    if (msg.style.display === "none") {
-        msg.style.display = "block";
-    } else {
-        msg.style.display = "none";
-    }
+if (form) {
+    form.addEventListener("submit", function (event) {
+
+        const valid = showError(form);
+
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
 }

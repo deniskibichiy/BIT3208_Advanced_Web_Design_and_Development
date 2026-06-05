@@ -1,13 +1,10 @@
 <?php
+
 session_start();
 
-if (!isset($_SESSION['user'])) {
-    header("Location: index.php");
+if (!isset($_SESSION["logged_in"])) {
+    header("Location: ../login.php");
     exit();
 }
 
-echo "Welcome " . $_SESSION['user'];
-?>
-
-<br>
-<a href="logout.php">Logout</a>
+echo "<h2>Welcome " . $_SESSION["user_name"] . "</h2>";

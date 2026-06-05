@@ -15,5 +15,8 @@
     </div>
 </footer>
 
+<script src="/BIT3208_Runi_Empire/week5/js/script.js"></script>
+<script src="/BIT3208_Runi_Empire/week5/js/validation.js"></script>
+
 </body>
 </html>
