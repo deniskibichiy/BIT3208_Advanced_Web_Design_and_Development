@@ -68,3 +68,44 @@ Weekly folders (Week1–Week5)
 Database exports per week  
 Screenshots for evidence  
 GitHub commits per milestone
+# Week 6 Project Reflection
+
+## Weekly Reflection Questions and Answers
+
+### 1. Why are databases important in web applications?
+Databases provide persistent storage for application data such as users, transactions, and system records. They allow web applications to store, retrieve, update, and manage structured data efficiently instead of relying on temporary memory or static files.
+
+---
+
+### 2. What is the difference between static and dynamic websites?
+Static websites serve fixed content that does not change unless manually edited in source files. Dynamic websites generate content in real time based on user input, server-side logic, or database queries (e.g., PHP with MySQL integration).
+
+---
+
+### 3. Explain CRUD operations with examples.
+CRUD refers to Create, Read, Update, and Delete operations performed on database records.
+
+- Create: inserting a new user into the database during signup
+- Read: retrieving and displaying users in a table
+- Update: modifying existing user details such as email or phone number
+- Delete: removing a user record from the database
+
+---
+
+### 4. How does PHP communicate with MySQL?
+PHP communicates with MySQL using PDO or MySQLi. It sends SQL queries to the database server, executes them, and retrieves results which can then be processed or displayed in the application.
+
+---
+
+### 5. Why should developers validate user input?
+Input validation ensures that data entered by users is correct, consistent, and safe. It prevents invalid data from being stored and reduces security risks such as SQL injection and system errors.
+
+---
+
+### 6. What security risks can arise from poor database design?
+Poor database design can lead to:
+- SQL injection vulnerabilities
+- Data duplication and inconsistency
+- Unauthorized data access
+- Weak password storage practices
+- Reduced performance and scalability issues

@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="/BIT3208_Runi_Empire/week5/index.php">Home</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="/BIT3208_Runi_Empire/week5/login.php">Login</a></li>
+                <li><a href="/BIT3208_Runi_Empire/week6/login.php">Login</a></li>
                 <li><a href="#">Book</a></li>
             </ul>
         </div>

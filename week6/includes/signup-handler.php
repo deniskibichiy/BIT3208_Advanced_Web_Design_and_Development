@@ -1,21 +1,38 @@
 <?php
-include "../database/db.php";
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once "../database/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
+    $name = trim($_POST["name"]);
+    $email = trim($_POST["email"]);
+    $phone = trim($_POST["phone"]);
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (name, email, phone, password)
-            VALUES ('$name', '$email', '$phone', '$password')";
+    try {
 
-    if (mysqli_query($conn, $sql)) {
+        $stmt = $pdo->prepare(
+            "INSERT INTO users (name, email, phone, password)
+             VALUES (:name, :email, :phone, :password)"
+        );
+
+        $stmt->execute([
+            ":name" => $name,
+            ":email" => $email,
+            ":phone" => $phone,
+            ":password" => $password
+        ]);
+
         header("Location: ../login.php");
         exit();
-    } else {
-        echo "Error: " . mysqli_error($conn);
+
+    } catch (PDOException $e) {
+
+        echo "Error: " . $e->getMessage();
+
     }
+
 }
-?>

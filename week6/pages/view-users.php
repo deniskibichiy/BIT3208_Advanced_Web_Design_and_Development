@@ -19,37 +19,39 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <h2>Registered Users</h2>
 
-    <?php if (count($users) > 0): ?>
+<?php if (count($users) > 0): ?>
 
-        <table border="1" cellpadding="10">
+<table border="1" cellpadding="10">
 
-            <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-            </tr>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Password</th>
+        <th>Created At</th>
+    </tr>
 
-            <?php foreach ($users as $user): ?>
+    <?php foreach ($users as $user): ?>
 
-                <tr>
-                    <td><?= $user['id'] ?></td>
-                    <td><?= htmlspecialchars($user['first_name']) ?></td>
-                    <td><?= htmlspecialchars($user['last_name']) ?></td>
-                    <td><?= htmlspecialchars($user['email']) ?></td>
-                    <td><?= htmlspecialchars($user['phone_number']) ?></td>
-                </tr>
+        <tr>
+            <td><?= $user['id'] ?></td>
+            <td><?= htmlspecialchars($user['name']) ?></td>
+            <td><?= htmlspecialchars($user['email']) ?></td>
+            <td><?= htmlspecialchars($user['phone']) ?></td>
+            <td><?= htmlspecialchars($user['password']) ?></td>
+            <td><?= $user['created_at'] ?></td>
+        </tr>
 
-            <?php endforeach; ?>
+    <?php endforeach; ?>
 
-        </table>
+</table>
 
-    <?php else: ?>
+<?php else: ?>
 
-        <p>No registered users found.</p>
+    <p>No registered users found.</p>
 
-    <?php endif; ?>
+<?php endif; ?>
 
 </body>
 </html>
