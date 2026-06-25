@@ -109,3 +109,25 @@ Poor database design can lead to:
 - Unauthorized data access
 - Weak password storage practices
 - Reduced performance and scalability issues
+## Week 7 Reflection Questions
+
+1. What is authentication?  
+Authentication is the process of verifying the identity of a user attempting to access a system, typically using credentials such as email and password.
+
+2. How does authorization differ from authentication?  
+Authentication verifies who a user is, while authorization determines what an authenticated user is allowed to do within the system based on assigned roles or permissions.
+
+3. Why should passwords be hashed?  
+Passwords should be hashed to ensure they are not stored in plain text. Hashing protects user credentials in case of database compromise and reduces the risk of credential exposure.
+
+4. What is the purpose of sessions?  
+Sessions are used to maintain user state across multiple pages after login. They allow the system to remember authenticated users without requiring repeated login.
+
+5. Why are protected pages important?  
+Protected pages are important to restrict access to sensitive or role-based functionality, ensuring only authenticated users can access certain resources.
+
+6. What are the dangers of SQL injection?  
+SQL injection is a security vulnerability where malicious SQL code is inserted into queries. It can lead to unauthorized data access, data corruption, or full system compromise if inputs are not properly handled.
+
+7. How does logout improve security?  
+Logout improves security by terminating the active session, preventing unauthorized access from reused or hijacked session data, especially on shared or public devices.
