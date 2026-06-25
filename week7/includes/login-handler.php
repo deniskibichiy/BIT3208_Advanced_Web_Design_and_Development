@@ -21,10 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $_SESSION["logged_in"] = true;
 
+        $_SESSION["user_id"] = $user["id"];
         $_SESSION["user_name"] = $user["name"];
+        $_SESSION["user_email"] = $user["email"];
+        $_SESSION["role"] = $user["role"];
 
         header("Location: ../pages/dashboard.php");
-
         exit();
 
     } else {
