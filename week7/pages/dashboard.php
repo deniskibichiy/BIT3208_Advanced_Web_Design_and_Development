@@ -28,28 +28,25 @@ if (!isset($_SESSION["logged_in"])) {
     <h3>User Dashboard</h3>
 
     <ul>
-        <li>Book Service</li>
-        <li>My Bookings</li>
+        <li><a href="book-service.php">Book Service</a></li>
+        <li><a href="my-bookings.php">My Bookings</a></li>
     </ul>
 
 <?php elseif ($_SESSION["role"] === "admin"): ?>
 
     <h3>Admin Dashboard</h3>
-
-    <ul>
-        <li>View Users</li>
-        <li>Edit Users</li>
-        <li>Delete Users</li>
-    </ul>
+    <li><a href="view-users.php">View Users</a></li>
+    <li><a href="edit-users.php">Edit Users</a></li>
+    <li><a href="delete-users.php">Delete Users</a></li>
 
 <?php elseif ($_SESSION["role"] === "super_admin"): ?>
 
     <h3>Super Admin Dashboard</h3>
 
     <ul>
-        <li>Manage Users</li>
-        <li>Manage Admins</li>
-        <li>System Overview</li>
+        <li><a href="view-users.php">Manage Users</a></li>
+        <li><a href="manage-admins.php">Manage Admins</a></li>
+        <li><a href="system-overview.php">System Overview</a></li>
     </ul>
 
 <?php endif; ?>

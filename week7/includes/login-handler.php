@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
+    
 
     $stmt = $pdo->prepare(
         "SELECT * FROM users WHERE email = ?"
