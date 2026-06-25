@@ -24,7 +24,7 @@
 
         </form>
 
-        <p>Don't have an account? <a class="center-div-anchor" href="signup.php">Sign Up</a></p>
+        <p>Don't have an account? <a class="center-div-anchor" href="./signup.php">Sign Up</a></p>
 
     </div>
 

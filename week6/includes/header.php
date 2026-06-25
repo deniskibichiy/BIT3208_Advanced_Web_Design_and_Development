@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- IMPORTANT: use absolute path -->
-    <link rel="stylesheet" href="/BIT3208_Runi_Empire/week5/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <title>Runi Empire</title>
 </head>
@@ -18,9 +18,9 @@
         </div>
         <div class="nav-links">
             <ul>
-                <li><a href="/BIT3208_Runi_Empire/week5/index.php">Home</a></li>
+                <li><a href="../index.php">Home</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="/BIT3208_Runi_Empire/week6/login.php">Login</a></li>
+                <li><a href="../login.php">Login</a></li>
                 <li><a href="#">Book</a></li>
             </ul>
         </div>
