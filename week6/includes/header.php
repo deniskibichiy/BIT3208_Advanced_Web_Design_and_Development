@@ -18,9 +18,9 @@
         </div>
         <div class="nav-links">
             <ul>
-                <li><a href="../index.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="../login.php">Login</a></li>
+                <li><a href="login.php">Login</a></li>
                 <li><a href="#">Book</a></li>
             </ul>
         </div>

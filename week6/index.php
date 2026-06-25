@@ -1,4 +1,4 @@
-    <?php include 'includes/header.php'; ?>
+    <?php include './includes/header.php'; ?>
     <div class="hero">
         <div class="hero-image">
             <img src="./images/barberBlack.jpg" alt="">
