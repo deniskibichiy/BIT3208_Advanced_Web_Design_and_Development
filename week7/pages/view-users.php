@@ -50,18 +50,23 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= htmlspecialchars($user['role']) ?></td>
             <td>
                 <?php if ($_SESSION["role"] === "super_admin"): ?>
-                    <a href="edit-user.php?id=<?= $user['id'] ?>">Edit</a>
-                    <a href="delete-user.php?id=<?= $user['id'] ?>" onclick="return confirm('Delete user?')"> Delete </a>
+                    <a href="edit-user.php?id=<?= $user['id'] ?>">Edit</a> |
+                    <a href="delete-user.php?id=<?= $user['id'] ?>" onclick="return confirm('Delete user?')">Delete</a>
                     <?php elseif ($_SESSION["role"] === "admin"): ?>
-                        <?php if ($user['role'] !== 'super_admin'): ?>
-                            <a href="edit-user.php?id=<?= $user['id'] ?>">Edit</a> |<a href="delete-user.php?id=<?= $user['id'] ?>" onclick="return confirm('Delete user?')"> Delete </a> <?php else: ?><span>Not allowed</span>
+                        <?php if ($user['role'] === 'user'): ?>
+                            <a href="edit-user.php?id=<?= $user['id'] ?>">Edit</a> |
+                            <a href="delete-user.php?id=<?= $user['id'] ?>" onclick="return confirm('Delete user?')">Delete</a>
+                            <?php else: ?>
+                                <span>Not allowed</span>
                                 <?php endif; ?>
                                 <?php endif; ?>
-            </td>
+                            </td>
         </tr>
     <?php endforeach; ?>
   
 </table>
+<li><a href="create-user.php">Create User</a></li>
+<a href="dashboard.php">Back</a>
 
 <?php else: ?>
 

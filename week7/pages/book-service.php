@@ -1,30 +1,20 @@
 <?php
-session_start();
+require_once '../database/db.php';
 
-if (!isset($_SESSION["logged_in"])) {
-    header("Location: ../login.php");
-    exit();
-}
+$stmt = $pdo->query("SELECT * FROM services");
+$services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book Service</title>
-</head>
-<body>
-
-<h2>Book a Service</h2>
 
 <form action="../includes/booking-handler.php" method="POST">
 
     <label>Service</label><br>
 
-    <select name="service" required>
-        <option value="Shaving">Shaving</option>
-        <option value="Massage">Massage</option>
-        <option value="Facial Scrubbing">Facial Scrubbing</option>
+    <select name="service_id" required>
+        <?php foreach ($services as $s): ?>
+            <option value="<?= $s['id'] ?>">
+                <?= $s['service_name'] ?>
+            </option>
+        <?php endforeach; ?>
     </select>
 
     <br><br>
@@ -37,6 +27,4 @@ if (!isset($_SESSION["logged_in"])) {
     <button type="submit">Book</button>
 
 </form>
-
-</body>
-</html>
+<a href="dashboard.php">Back</a>
