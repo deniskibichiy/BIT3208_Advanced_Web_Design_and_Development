@@ -131,3 +131,67 @@ SQL injection is a security vulnerability where malicious SQL code is inserted i
 
 7. How does logout improve security?  
 Logout improves security by terminating the active session, preventing unauthorized access from reused or hijacked session data, especially on shared or public devices.
+---
+## Week 8 Revision Questions
+
+### 1. What is Responsive Web Design?
+Responsive Web Design is an approach where web pages adapt to different screen sizes and devices using flexible layouts, media queries, and scalable elements.
+
+
+
+### 2. Why is Mobile-First Design important?
+Mobile-first design ensures the website is optimized for smaller screens first, improving performance, usability, and progressive enhancement for larger screens.
+
+
+
+### 3. Explain the role of media queries.
+Media queries allow CSS rules to be applied conditionally based on device characteristics such as screen width, height, or orientation.
+
+
+
+### 4. Differentiate between Flexbox and CSS Grid.
+Flexbox is designed for one-dimensional layouts (row or column), while CSS Grid is designed for two-dimensional layouts (rows and columns simultaneously).
+
+
+
+### 5. What is the purpose of the viewport meta tag?
+It controls how a webpage is displayed on mobile devices, ensuring proper scaling and responsiveness.
+
+Example:
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+```
+### 6. How do responsive images improve user experience?
+
+Responsive images adjust to different screen sizes, reducing load time and preventing layout overflow or distortion on smaller devices.
+
+
+
+### 7. Explain the advantages of responsive websites.
+
+Better mobile usability  
+Improved SEO rankings  
+Reduced maintenance (single codebase)  
+Consistent experience across devices  
+
+
+
+### 8. Write a CSS media query for screens smaller than 768px.
+
+```css
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+```
+### 9. How does CSS Grid help create responsive layouts?
+
+CSS Grid allows developers to define 
+flexible row and column structures that automatically adjust to screen size, making layout design more controlled and adaptive.
+
+
+### 10. Describe two methods used to test responsive websites.
+
+Browser DevTools device simulation (Chrome/Firefox responsive mode)  
+Physical testing on different devices (mobile, tablet, desktop)
