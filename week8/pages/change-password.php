@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/../config.php';
 session_start();
 require_once '../database/db.php';
 
@@ -55,47 +55,42 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     }
 }
-
+require_once BASE_PATH . '/includes/header.php';
 ?>
+<div class="page-shell">
+    
+    <h2>Change Password</h2>
+    
+    <?php if (!empty($message)): ?>
+        <p><?= htmlspecialchars($message) ?></p>
+    <?php endif; ?>
+    
+    <form method="POST">
+    
+        <label>Current Password</label><br>
+        <input type="password" name="current_password" required>
+    
+        <br><br>
+    
+        <label>New Password</label><br>
+        <input type="password" name="new_password" required>
+    
+        <br><br>
+    
+        <label>Confirm New Password</label><br>
+        <input type="password" name="confirm_password" required>
+    
+        <br><br>
+    
+        <button type="submit">Change Password</button>
+    
+    </form>
+    
+    <br>
+    
+    <p><a href="dashboard.php">Back to Dashboard</a></p>
+</div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Change Password</title>
-</head>
-<body>
-
-<h2>Change Password</h2>
-
-<?php if (!empty($message)): ?>
-    <p><?= htmlspecialchars($message) ?></p>
-<?php endif; ?>
-
-<form method="POST">
-
-    <label>Current Password</label><br>
-    <input type="password" name="current_password" required>
-
-    <br><br>
-
-    <label>New Password</label><br>
-    <input type="password" name="new_password" required>
-
-    <br><br>
-
-    <label>Confirm New Password</label><br>
-    <input type="password" name="confirm_password" required>
-
-    <br><br>
-
-    <button type="submit">Change Password</button>
-
-</form>
-
-<br>
-
-<p><a href="dashboard.php">Back to Dashboard</a></p>
-
-</body>
-</html>
+<?php 
+require_once BASE_PATH . '/includes/footer.php';
+?>

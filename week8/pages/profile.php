@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config.php';
 session_start();
 require_once '../database/db.php';
 
@@ -30,17 +31,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("Location: dashboard.php");
     exit();
 }
+require_once BASE_PATH . '/includes/header.php';
 ?>
-
-<form method="POST">
-    <label style="margin-top: 20px; for="name">Name</label> <br>
-    <input style="margin-top: 5px; type="text" name="name" value="<?= $user['name'] ?>"> <br>
-    <label style="margin-top: 20px; for="name">Email</label> <br>
-    <input style="margin-top: 5px; type="email" name="email" value="<?= $user['email'] ?>"> <br>
-    <label style="margin-top: 20px; for="name">Phone</label> <br>
-    <input style="margin-top: 5px; type="text" name="phone" value="<?= $user['phone'] ?>"> <br>
-
-    <button style="margin-top: 20px; type="submit">Update Profile</button>
-</form> <br>
-<a href="change-password.php">Change Password</a> <br>
-<a href="dashboard.php">Back to Dashboard</a>
+<div class="page-shell">
+    
+    <form method="POST">
+        <label style="margin-top: 20px; for="name">Name</label> <br>
+        <input style="margin-top: 5px; type="text" name="name" value="<?= $user['name'] ?>"> <br>
+        <label style="margin-top: 20px; for="name">Email</label> <br>
+        <input style="margin-top: 5px; type="email" name="email" value="<?= $user['email'] ?>"> <br>
+        <label style="margin-top: 20px; for="name">Phone</label> <br>
+        <input style="margin-top: 5px; type="text" name="phone" value="<?= $user['phone'] ?>"> <br>
+    
+        <button style="margin-top: 20px; type="submit">Update Profile</button>
+    </form> <br>
+    <a href="change-password.php">Change Password</a> <br>
+    <a href="dashboard.php">Back to Dashboard</a>
+</div>
+<?php 
+require_once BASE_PATH . '/includes/footer.php';
+?>

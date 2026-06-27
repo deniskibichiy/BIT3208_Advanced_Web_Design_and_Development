@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config.php';
 session_start();
 require_once '../database/db.php';
 
@@ -26,53 +27,54 @@ $stmt = $pdo->query("
 ");
 
 $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+require_once BASE_PATH . '/includes/header.php';
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>All Bookings</title>
-</head>
-<body>
 
-<h2>Bookings (Admin View)</h2>
 
-<?php if (count($bookings) > 0): ?>
-
-<table border="1" cellpadding="10">
-
-    <tr>
-        <th>ID</th>
-        <th>User</th>
-        <th>Email</th>
-        <th>Service</th>
-        <th>Booking Date</th>
-        <th>Created At</th>
-        <th>Actions</th>
-    </tr>
-
-    <?php foreach ($bookings as $b): ?>
-        <tr>
-            <td><?= $b['id'] ?></td>
-            <td><?= htmlspecialchars($b['user_name']) ?></td>
-            <td><?= htmlspecialchars($b['email']) ?></td>
-            <td><?= htmlspecialchars($b['service_name']) ?></td>
-            <td><?= $b['booking_date'] ?></td>
-            <td><?= $b['created_at'] ?></td>
-             <td>
-                <a href="delete-booking.php?id=<?= $b['id'] ?>"onclick="return confirm('Delete this booking?')">Delete </a>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-
-</table>
-<a href="create-booking.php">Create Booking</a> <br>
-<a href="dashboard.php">Back</a>
-
-<?php else: ?>
-    <p>No bookings found.</p>
-    <p><a href="create-booking.php">Create Booking</a></p>
+<div class="page-shell">
+    <h2>Bookings (Admin View)</h2>
+    
+    <?php if (count($bookings) > 0): ?>
+    
+    <div class="table-wrapper">
+        <table border="1" cellpadding="10">
+    
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Email</th>
+                <th>Service</th>
+                <th>Booking Date</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+    
+            <?php foreach ($bookings as $b): ?>
+                <tr>
+                    <td><?= $b['id'] ?></td>
+                    <td><?= htmlspecialchars($b['user_name']) ?></td>
+                    <td><?= htmlspecialchars($b['email']) ?></td>
+                    <td><?= htmlspecialchars($b['service_name']) ?></td>
+                    <td><?= $b['booking_date'] ?></td>
+                    <td><?= $b['created_at'] ?></td>
+                     <td>
+                        <a href="delete-booking.php?id=<?= $b['id'] ?>"onclick="return confirm('Delete this booking?')">Delete </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+    
+        </table>
+    </div>
+    <a href="create-booking.php">Create Booking</a> <br>
+    <a href="dashboard.php">Back</a>
+    
+    <?php else: ?>
+        <p>No bookings found.</p>
+        <p><a href="create-booking.php">Create Booking</a></p>
+</div>
 
 <?php endif; ?>
 
-</body>
-</html>
+<?php 
+require_once BASE_PATH . '/includes/footer.php';
+?>

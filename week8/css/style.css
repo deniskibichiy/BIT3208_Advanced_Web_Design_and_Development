@@ -36,23 +36,29 @@ footer {
 
 .service-cards {
     display: flex;
-    flex-direction: row;
-    height: 70%;
+    gap: 20px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
+
 .service-card {
+    flex: 1;
+    min-width: 220px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    justify-content: space-between;
+    gap: 12px;
     padding: 15px;
     align-items: center;
+    background: white;
+    border-radius: 10px;
 }
 
 .service-card img {
-    border-radius: 15px;
-    height: 60%;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .heading {
@@ -70,16 +76,17 @@ footer {
 }
 
 .hero-image img {
-    height: 350px;
-    width: 350px;
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
     border-radius: 12px;
 }
 
 .hero-text {
-    padding: 50px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -248,4 +255,99 @@ tr:nth-child(odd) td {
 
 caption {
   padding: 10px;
+}
+
+.role-based-ul li a {
+    color: var(--accent-teal);
+}
+
+.page-shell {
+    min-height: 90vh;
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+
+    .nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-div {
+        width: 100%;
+    }
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+
+    table {
+        min-width: 800px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+.hero-image {
+    display: none;
+    
+}
+    
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    display: none;
+    margin-top: auto;
+}
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .hero-description {
+        width: 100%;
+    }
 }

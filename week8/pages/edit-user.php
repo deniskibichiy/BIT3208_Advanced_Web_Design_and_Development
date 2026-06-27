@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config.php';
 session_start();
 require_once '../database/db.php';
 
@@ -32,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("Location: view-users.php");
     exit();
 }
+require_once BASE_PATH . '/includes/header.php';
 ?>
 
 <form method="POST">
@@ -41,3 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <button type="submit">Update</button>
 </form>
+<?php 
+require_once BASE_PATH . '/includes/footer.php';
+?>

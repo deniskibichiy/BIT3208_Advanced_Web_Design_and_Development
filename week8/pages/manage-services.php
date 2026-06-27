@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config.php';
 session_start();
 
 if (!isset($_SESSION["logged_in"])) {
@@ -9,23 +10,20 @@ if (!isset($_SESSION["logged_in"])) {
 if ($_SESSION["role"] !== "super_admin") {
     die("Access denied");
 }
+require_once BASE_PATH . '/includes/header.php';
 ?>
+<div class="page-shell">
+    
+    <h2>Service Management</h2>
+    
+    <ul>
+        <li><a href="add-service.php">Add Service</a></li>
+        <li><a href="view-services.php">View Services</a></li>
+    </ul>
+    
+    <a href="dashboard.php">Back to Dashboard</a>
+</div>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Manage Services</title>
-</head>
-<body>
-
-<h2>Service Management</h2>
-
-<ul>
-    <li><a href="add-service.php">Add Service</a></li>
-    <li><a href="view-services.php">View Services</a></li>
-</ul>
-
-<a href="dashboard.php">Back to Dashboard</a>
-
-</body>
-</html>
+<?php 
+require_once BASE_PATH . '/includes/footer.php';
+?>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- IMPORTANT: use absolute path -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/style.css">
 
     <title>Runi Empire</title>
 </head>
@@ -18,10 +19,10 @@
         </div>
         <div class="nav-links">
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="<?= BASE_URL ?>/index.php">Home</a></li>
+                <li><a href="<?= BASE_URL ?>/login.php">Login</a></li>
+                <li><a href="<?= BASE_URL ?>/pages/book-service.php">Book</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="#">Book</a></li>
             </ul>
         </div>
     </div>

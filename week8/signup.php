@@ -1,4 +1,5 @@
-<?php include 'includes/header.php'; ?>
+    <?php require_once __DIR__ . '/config.php'; ?>
+    <?php require_once BASE_PATH . '/includes/header.php'; ?>
 
 <div class="auth-wrapper">
 

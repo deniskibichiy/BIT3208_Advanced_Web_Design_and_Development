@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config.php';
 session_start();
 require_once '../database/db.php';
 
@@ -23,15 +24,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("Location: manage-admins.php");
     exit();
 }
+require_once BASE_PATH . '/includes/header.php';
 ?>
-
-<h2>Create Admin</h2>
-
-<form method="POST">
-    <input name="name" placeholder="Name">
-    <input name="email" placeholder="Email">
-    <input name ="phone"placeholder = "Phone">
-    <input name="password" type="password" placeholder="Password">
-    <button>Create Admin</button>
-</form>
-<a href="manage-admins.php">Back</a>
+<div class="page-shell">
+    
+    <h2>Create Admin</h2>
+    
+    <form method="POST">
+        <input name="name" placeholder="Name">
+        <input name="email" placeholder="Email">
+        <input name ="phone"placeholder = "Phone">
+        <input name="password" type="password" placeholder="Password">
+        <button>Create Admin</button>
+    </form>
+    <a href="manage-admins.php">Back</a>
+</div>
+<?php 
+require_once BASE_PATH . '/includes/footer.php';
+?>
