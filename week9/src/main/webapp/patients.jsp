@@ -3,6 +3,17 @@
 
 <%@ page import="java.util.List" %>
 <%@ page import="com.ehealth.Patient" %>
+<%
+
+if(session.getAttribute("username") == null){
+
+    response.sendRedirect("login.jsp");
+
+    return;
+
+}
+
+%>
 
 
 <!DOCTYPE html>
