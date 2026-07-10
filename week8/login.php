@@ -19,7 +19,7 @@
             <div class="form-row">
                 <label>Password</label>
                 <input type="password" name="password" required>
-            </div>
+            </ div>
 
             <div class="center-div"><button type="submit" class="btn-cta">Login</button></div>
 
