@@ -1,0 +1,9 @@
+# Eclipse workspace files
+.metadata/
+
+# Build output
+build/
+
+# Temporary files
+*.tmp
+*.log
