@@ -25,29 +25,39 @@ public class LoginServelet extends HttpServlet {
         String password =
                 request.getParameter("password");
         UserDAO dao = new UserDAO();
-
-
         if(dao.validateUser(username, password)) {
 
 
-            HttpSession session =
-                    request.getSession();
-
+            HttpSession session = request.getSession();
 
             session.setAttribute(
-                    "username",
-                    username
+                "username",
+                username
             );
 
 
+            String remember =
+                request.getParameter("remember");
+
+
+            if(remember != null) {
+
+
+                Cookie cookie =
+                    new Cookie("username", username);
+
+
+                cookie.setMaxAge(
+                    7 * 24 * 60 * 60
+                );
+
+
+                response.addCookie(cookie);
+
+            }
+
+
             response.sendRedirect("dashboard.jsp");
-
-
-        }
-        else {
-
-
-            response.sendRedirect("login.jsp");
 
 
         }

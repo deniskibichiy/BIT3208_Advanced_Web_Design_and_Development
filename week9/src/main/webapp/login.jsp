@@ -44,7 +44,10 @@ type="password"
 name="password"
 placeholder="Enter password"
 required>
-
+<label>
+<input type="checkbox" name="remember">
+    Remember Me
+</label>
 
 <input 
 type="submit"

@@ -18,14 +18,25 @@ public class LogOutServelet extends HttpServlet {
             throws ServletException, IOException {
 
 
-        HttpSession session = request.getSession(false);
+        HttpSession session =
+                request.getSession(false);
 
 
-        if(session != null) {
+        if(session != null){
 
             session.invalidate();
 
         }
+
+
+        Cookie cookie =
+            new Cookie("username", "");
+
+
+        cookie.setMaxAge(0);
+
+
+        response.addCookie(cookie);
 
 
         response.sendRedirect("login.jsp");
