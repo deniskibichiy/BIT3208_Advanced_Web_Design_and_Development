@@ -24,10 +24,10 @@ public class LoginServelet extends HttpServlet {
 
         String password =
                 request.getParameter("password");
+        UserDAO dao = new UserDAO();
 
 
-        if(username.equals("admin")
-                && password.equals("1234")) {
+        if(dao.validateUser(username, password)) {
 
 
             HttpSession session =
@@ -40,20 +40,19 @@ public class LoginServelet extends HttpServlet {
             );
 
 
-            response.sendRedirect(
-                    "dashboard.jsp"
-            );
+            response.sendRedirect("dashboard.jsp");
 
-
-        } else {
-
-
-            response.sendRedirect(
-                    "login.jsp"
-            );
 
         }
+        else {
 
+
+            response.sendRedirect("login.jsp");
+
+
+        }
     }
 
+
+    
 }
