@@ -4,7 +4,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.ehealth.Patient" %>
 <%
-
+session.setMaxInactiveInterval(300);
 if(session.getAttribute("username") == null){
 
     response.sendRedirect("login.jsp");

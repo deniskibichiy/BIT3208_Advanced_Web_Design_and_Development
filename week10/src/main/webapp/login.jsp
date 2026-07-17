@@ -20,6 +20,21 @@
 
 
 <div class="container">
+<label>
+Preferred Theme:
+</label>
+
+<select name="theme">
+
+<option value="light">
+Light
+</option>
+
+<option value="dark">
+Dark
+</option>
+
+</select>
 
 
 <h1>EHealth System Login</h1>

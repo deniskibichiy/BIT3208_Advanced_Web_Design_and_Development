@@ -134,3 +134,18 @@ a.button {
     color: #16a34a;
 
 }
+
+.dark {
+
+    background-color: #222;
+    color: white;
+
+}
+
+
+.light {
+
+    background-color: white;
+    color: black;
+
+}

@@ -26,14 +26,19 @@ public class LoginServelet extends HttpServlet {
                 request.getParameter("password");
         UserDAO dao = new UserDAO();
         if(dao.validateUser(username, password)) {
+        	
+        	HttpSession session = request.getSession();
+
+        	session.setAttribute(
+        	        "username",
+        	        username
+        	);
 
 
-            HttpSession session = request.getSession();
-
-            session.setAttribute(
-                "username",
-                username
-            );
+        	session.setAttribute(
+        	        "loginTime",
+        	        new java.util.Date()
+        	);
 
 
             String remember =
@@ -55,6 +60,25 @@ public class LoginServelet extends HttpServlet {
                 response.addCookie(cookie);
 
             }
+            String theme =
+                    request.getParameter("theme");
+
+
+            if(theme != null) {
+
+
+                Cookie themeCookie =
+                        new Cookie("theme", theme);
+
+
+                themeCookie.setMaxAge(
+                        30 * 24 * 60 * 60
+                );
+
+
+                response.addCookie(themeCookie);
+
+            }
 
 
             response.sendRedirect("dashboard.jsp");
@@ -62,7 +86,6 @@ public class LoginServelet extends HttpServlet {
 
         }
     }
-
-
     
 }
+

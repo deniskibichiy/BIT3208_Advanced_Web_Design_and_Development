@@ -17,6 +17,30 @@ if(username == null){
 }
 
 %>
+<%
+
+String theme = "light";
+
+
+Cookie[] cookies =
+request.getCookies();
+
+
+if(cookies != null){
+
+    for(Cookie cookie : cookies){
+
+        if(cookie.getName().equals("theme")){
+
+            theme = cookie.getValue();
+
+        }
+
+    }
+
+}
+
+%>
 
 
 <!DOCTYPE html>
@@ -31,7 +55,7 @@ if(username == null){
 </head>
 
 
-<body>
+<body class="<%=theme%>">
 
 
 <%@ include file="includes/navbar.jsp" %>
@@ -43,6 +67,16 @@ if(username == null){
 <h1>
 Welcome <%= username %>
 </h1>
+<p>
+Session ID:
+<%= session.getId() %>
+</p>
+
+
+<p>
+Login Time:
+<%= session.getAttribute("loginTime") %>
+</p>
 
 
 <div class="card">
