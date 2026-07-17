@@ -15,5 +15,8 @@ Patients
 <a href="AdmittedPatientsServelet">
 Admissions
 </a>
+<a href="searchPatient.jsp">
+Search Patients
+</a>
 
 </nav>

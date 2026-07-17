@@ -37,6 +37,110 @@ public class PatientDAO {
         }
 
     }
+    public void updatePatient(Patient patient) {
+
+        String sql =
+        "UPDATE patients SET name=?, age=?, gender=?, diagnosis=?, admitted=? WHERE id=?";
+
+
+        try(Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)) {
+
+
+            ps.setString(1, patient.getName());
+            ps.setInt(2, patient.getAge());
+            ps.setString(3, patient.getGender());
+            ps.setString(4, patient.getDiagnosis());
+            ps.setBoolean(5, patient.isAdmitted());
+            ps.setString(6, patient.getId());
+
+
+            ps.executeUpdate();
+
+
+        } catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
+    }
+    
+    public void deletePatient(String id){
+
+        String sql =
+        "DELETE FROM patients WHERE id=?";
+
+
+        try(Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)){
+
+
+            ps.setString(1,id);
+
+            ps.executeUpdate();
+
+
+        }
+        catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
+    }
+    
+    public List<Patient> searchPatients(String name){
+
+        List<Patient> patients =
+                new ArrayList<>();
+
+
+        String sql =
+        "SELECT * FROM patients WHERE name LIKE ?";
+
+
+        try(Connection conn =
+                DatabaseConnection.getConnection();
+
+            PreparedStatement ps =
+                conn.prepareStatement(sql)){
+
+
+            ps.setString(1,"%"+name+"%");
+
+
+            ResultSet rs =
+                ps.executeQuery();
+
+
+            while(rs.next()){
+
+
+                patients.add(
+                    new Patient(
+                        rs.getString("id"),
+                        rs.getString("name"),
+                        rs.getInt("age"),
+                        rs.getString("gender"),
+                        rs.getString("diagnosis"),
+                        rs.getBoolean("admitted")
+                    )
+                );
+
+            }
+
+
+        }catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
+
+        return patients;
+
+    }
 
 
 
@@ -86,6 +190,52 @@ public class PatientDAO {
 
 
         return patients;
+
+    }
+    public Patient getPatientById(String id) {
+
+        Patient patient = null;
+
+
+        String sql =
+        "SELECT * FROM patients WHERE id=?";
+
+
+        try(Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)) {
+
+
+            ps.setString(1, id);
+
+
+            ResultSet rs = ps.executeQuery();
+
+
+            if(rs.next()) {
+
+
+                patient = new Patient(
+
+                    rs.getString("id"),
+                    rs.getString("name"),
+                    rs.getInt("age"),
+                    rs.getString("gender"),
+                    rs.getString("diagnosis"),
+                    rs.getBoolean("admitted")
+
+                );
+
+            }
+
+
+        } catch(Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+
+        return patient;
 
     }
 

@@ -3,8 +3,12 @@
 
 <%@ page import="java.util.List" %>
 <%@ page import="com.ehealth.Patient" %>
+
+
 <%
+
 session.setMaxInactiveInterval(300);
+
 if(session.getAttribute("username") == null){
 
     response.sendRedirect("login.jsp");
@@ -21,7 +25,7 @@ if(session.getAttribute("username") == null){
 
 <head>
 
-<title>Patients</title>
+<title>Search Patients</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -30,13 +34,48 @@ if(session.getAttribute("username") == null){
 
 <body>
 
+
 <%@ include file="includes/navbar.jsp" %>
 
 
 <div class="container">
 
 
-<h1>Patient Records</h1>
+<h1>Search Patients</h1>
+
+
+<div class="card">
+
+
+<form action="SearchPatientServelet" method="get">
+
+
+
+<label>
+Patient Name
+</label>
+
+
+<input 
+type="text"
+name="name"
+placeholder="Enter patient name"
+required>
+
+
+<br><br>
+
+
+<button type="submit">
+Search
+</button>
+
+
+</form>
+
+
+</div>
+
 
 
 <%
@@ -44,30 +83,20 @@ if(session.getAttribute("username") == null){
 List<Patient> patients =
 (List<Patient>) request.getAttribute("patients");
 
-int totalPatients = 0;
+%>
+
+
+
+<%
 
 if(patients != null){
-    totalPatients = patients.size();
-}
 
 %>
 
 
-<div class="card">
-
 <h2>
-Total Registered Patients
+Search Results
 </h2>
-
-<h1>
-<%= totalPatients %>
-</h1>
-
-</div>
-
-
-
-<h2>Patient List</h2>
 
 
 <table>
@@ -86,6 +115,7 @@ Total Registered Patients
 <th>Diagnosis</th>
 
 <th>Status</th>
+
 <th>Actions</th>
 
 </tr>
@@ -94,8 +124,6 @@ Total Registered Patients
 
 <%
 
-if(patients != null){
-
 for(Patient p : patients){
 
 %>
@@ -103,35 +131,34 @@ for(Patient p : patients){
 
 <tr>
 
+
 <td>
-<%= p.getId() %>
+<%=p.getId()%>
 </td>
 
 
 <td>
-<%= p.getName() %>
+<%=p.getName()%>
 </td>
 
 
 <td>
-<%= p.getAge() %>
+<%=p.getAge()%>
 </td>
 
 
 <td>
-<%= p.getGender() %>
+<%=p.getGender()%>
 </td>
 
 
 <td>
-<%= p.getDiagnosis() %>
+<%=p.getDiagnosis()%>
 </td>
 
 
 <td>
-
-<%= p.isAdmitted() ? "Admitted" : "Not Admitted" %>
-
+<%=p.isAdmitted() ? "Admitted" : "Not Admitted"%>
 </td>
 
 
@@ -145,7 +172,7 @@ Edit
 |
 
 <a href="DeletePatientServelet?id=<%=p.getId()%>"
-   onclick="return confirm('Delete this patient?');">
+onclick="return confirm('Delete this patient?');">
 Delete
 </a>
 
@@ -160,28 +187,31 @@ Delete
 
 }
 
+%>
+
+
+</table>
+
+
+<%
+
 }
 
 %>
 
 
 
-</table>
-
-
 <br>
 
 
-<a class="button" href="register.jsp">
-Add New Patient
+<a class="button" href="ViewPatientServelet">
+Back to Patients
 </a>
-
 
 
 </div>
 
 
 </body>
-
 
 </html>
